@@ -32,7 +32,7 @@ export const sendMessage = async (req, res) => {
 
         res.status(201).json(newMessage);
     } catch (error) {
-        console.log(`Error in sending message: ${error}`);
+        console.log(`Error in sending message: ${error.message}`);
         res.status(500).json({ error: "Internal server error" });
     }
 }
@@ -53,7 +53,7 @@ export const getMessages = async(req, res)=>{
 
         res.status(200).json(messages);
     } catch (error) {
-        console.log(`Error in getMessages: ${error}`);
+        console.log(`Error in getMessages: ${error.message}`);
         res.status(500).json({ error: "Internal server error" });
     }
 }
